@@ -1,8 +1,16 @@
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import TestScreen from '../screens/TestScreen';
+import {SimplePokemon} from '../interfaces/pokemonInterfaces';
+import PokemonScreen from '../screens/PokemonScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  HomeScreen: undefined;
+  PokemonScreen: {simplePokemon: SimplePokemon; color: string};
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 function Navigation() {
   return (
@@ -10,12 +18,11 @@ function Navigation() {
       screenOptions={{
         headerShown: false,
         cardStyle: {
-          backgroundColor: 'white'
-        }
-      }}
-    >
+          backgroundColor: 'white',
+        },
+      }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="TestScreen" component={TestScreen} />
+      <Stack.Screen name="PokemonScreen" component={PokemonScreen} />
     </Stack.Navigator>
   );
 }
