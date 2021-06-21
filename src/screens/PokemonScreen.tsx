@@ -19,8 +19,7 @@ const PokemonScreen = ({navigation, route}: Props) => {
 
   const {isLoading, pokemon} = usePokemon(simplePokemon.id)
 
-  console.log(pokemon);
-
+  // console.log(pokemon);
 
   return (
     <View style={{flex: 1}} >
@@ -33,7 +32,7 @@ const PokemonScreen = ({navigation, route}: Props) => {
           <TouchableOpacity
             activeOpacity={0.7}
             style={{...styles.button, top: top+10}}
-            onPress={()=>console.log('sadafdsf')}
+            onPress={()=>navigation.pop()}
           >
             <Icon
               name="arrow-back-outline"
@@ -53,7 +52,7 @@ const PokemonScreen = ({navigation, route}: Props) => {
       {/* Body */}
       <View style={styles.body}>
         { isLoading ?
-          <ActivityIndicator color={color} size={50} />
+          <ActivityIndicator color={color} size={50} style={{marginTop: 320}} />
           :
           <PokemonDetail
             pokemon={pokemon}
@@ -69,9 +68,11 @@ export default PokemonScreen;
 
 const styles = StyleSheet.create({
   header: {
+    position:'absolute',
+    width: '100%',
     zIndex: 999,
-    backgroundColor: 'red',
-    height: 370,
+    // backgroundColor: 'red',
+    height: 320,
     alignItems: 'flex-start',
     borderBottomLeftRadius: 500,
     borderBottomRightRadius: 500,
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center'
 

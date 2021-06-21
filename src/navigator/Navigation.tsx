@@ -1,7 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
-import TestScreen from '../screens/TestScreen';
 import {SimplePokemon} from '../interfaces/pokemonInterfaces';
 import PokemonScreen from '../screens/PokemonScreen';
 
@@ -12,7 +11,7 @@ export type RootStackParams = {
 
 const Stack = createStackNavigator<RootStackParams>();
 
-function Navigation() {
+function NavTabList() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -27,4 +26,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default NavTabList;

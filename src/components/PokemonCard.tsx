@@ -57,7 +57,7 @@ const PokemonCard = ({pokemon}: Props) => {
           width: windowWidth * 0.45,
           backgroundColor: bkgColor,
         }}>
-        <Text style={styles.name}>{pokemon.name + '\n#' + pokemon.name}</Text>
+        <Text style={styles.name}>{pokemon.name + '\n#' + pokemon.id}</Text>
         <View style={{...styles.pokebolaWrap}}>
           <Image
             source={require('../assets/pokebola-blanca.png')}
